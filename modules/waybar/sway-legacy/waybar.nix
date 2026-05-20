@@ -18,10 +18,12 @@
           "sway/workspaces"
           "sway/mode"
           "sway/window"
+          "custom/separator"
+          "sway/language"
         ];
         modules-right = [
           "tray"
-          "sway/language"
+          # "sway/language"
           "cpu"
           "custom/separator"
           "memory"
@@ -114,7 +116,7 @@
         padding: 0 4px;
         margin: 0 1px;
         color: #9b8d7f;
-      }
+      }      
       #battery, #clock {
         background-color: #9b8d7f;
         color: #202020;
