@@ -72,9 +72,9 @@
     enable = true;
     wrapperFeatures.gtk = true;
   };
-  programs.niri = {
-    enable = true;
-  };
+  # programs.niri = {
+  #   enable = true;
+  # };
   programs.xwayland.enable = true;
 
   # Packages

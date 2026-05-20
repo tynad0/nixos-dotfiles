@@ -7,7 +7,7 @@ in
   imports = [
     ./modules/foot/foot.nix
     ./modules/helix/helix.nix
-    ./modules/waybar/waybar.nix
+    ./modules/waybar/sway-legacy/waybar.nix
     ./modules/rofi/rofi.nix
     ./modules/mako/mako.nix
   ];
@@ -119,6 +119,7 @@ in
   # SWAY CONFIG
   xdg.configFile = {
     "sway/config".source = ./modules/sway/config;
+    "niri/config.kdl".source = ./modules/niri/config.kdl;
   };
 
   # PORTAL
