@@ -16,6 +16,8 @@ in
   home.homeDirectory = "/home/tynado";
   home.stateVersion = "25.11";
 
+  nixpkgs.config.allowUnfree = true;
+
   # GTK
   gtk = {
     enable = true;
@@ -61,6 +63,7 @@ in
     xfce.thunar
     libnotify
     bitwarden-desktop
+    obsidian
 
     file
     wev
