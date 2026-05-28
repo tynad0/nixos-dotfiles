@@ -77,6 +77,8 @@ in
     glib
     shared-mime-info
     desktop-file-utils
+    kdePackages.ksshaskpass
+    
 
     helix
   ];
@@ -91,6 +93,7 @@ in
       hms = "home-manager switch --flake .";
       sc = "hx ${homeDir}/dotfiles/nixos/configuration.nix";
       cdd = "cd ${homeDir}/dotfiles";
+      cdov = "cd ${homeDir}/'Obsidian Vault'";
     };
 
     initExtra = ''
@@ -184,7 +187,9 @@ xdg.mimeApps = {
   };
 };
 
-  home.sessionVariables = { };
+  home.sessionVariables = {
+    SSH_ASKPASS = "${pkgs.kdePackages.ksshaskpass}/bin/ksshaskpass";
+  };
 
   programs.home-manager.enable = true;
 }
