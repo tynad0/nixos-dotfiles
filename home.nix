@@ -114,6 +114,31 @@ in
     
   };
 
+  # SSH
+    programs.ssh = {
+  enable = true;
+  # Добавляем эту строку, чтобы убрать предупреждение:
+  enableDefaultConfig = false; 
+  
+  matchBlocks = {
+    # Сначала определяем "универсальные" настройки для всех хостов
+    "*" = {
+      extraOptions = {
+        # Сюда можно вынести то, что раньше было по умолчанию
+      };
+    };
+    # Твой GitHub
+    "github.com" = {
+      hostname = "github.com";
+      user = "git";
+      identityFile = "~/.ssh/id_ed25519";
+    };
+  };
+};
+
+services.ssh-agent.enable = true;
+
+
   # BROWSER
   programs.librewolf = {
     enable = true;
