@@ -64,6 +64,7 @@ in
     libnotify
     bitwarden-desktop
     obsidian
+    qutebrowser
 
     file
     wev
@@ -93,8 +94,8 @@ in
       hms = "home-manager switch --flake .";
       sc = "hx ${homeDir}/dotfiles/nixos/configuration.nix";
       cdd = "cd ${homeDir}/dotfiles";
-      cdov = "cd ${homeDir}/'Obsidian Vault'";
-    };
+      cdov = ''cd "${homeDir}/Obsidian Vault"'';
+      };
 
     initExtra = ''
       git_branch() {
