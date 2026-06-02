@@ -55,6 +55,7 @@ output * bg ~/Downloads/web/wallhaven-o5ky29_1920x1200.png fill
 
 ### Key bindings
 #
+bindsym $mod+y exec yt-search
 # Basics:
 #
     # Start a terminal
