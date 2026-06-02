@@ -95,7 +95,7 @@ in
       sc = "hx ${homeDir}/dotfiles/nixos/configuration.nix";
       cdd = "cd ${homeDir}/dotfiles";
       cdov = ''cd "${homeDir}/Obsidian Vault"'';
-      };
+    };
 
     initExtra = ''
       git_branch() {
