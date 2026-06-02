@@ -79,8 +79,13 @@ in
     shared-mime-info
     desktop-file-utils
     kdePackages.ksshaskpass
-    
 
+    # YT automatic tool
+     (pkgs.writeShellScriptBin "yt-search" ''
+      query=$(rofi -dmenu -p "YouTube: ")
+      [ -n "$query" ] && xdg-open "https://www.youtube.com/results?search_query=''${query// /+}"
+    '')
+    
     helix
   ];
 
@@ -133,9 +138,9 @@ in
 
     
   # BROWSER
-  programs.librewolf = {
-    enable = true;
-  };
+  # programs.librewolf = {
+  #   enable = true;
+  # };
 
   # SWAY CONFIG
   xdg.configFile = {
@@ -169,6 +174,10 @@ home.file.".local/share/applications/helix.desktop".text = ''
 xdg.mimeApps = {
   enable = true;
   defaultApplications = {
+    "text/html" = "firefox.desktop";
+    "x-scheme-handler/http" = "firefox.desktop";
+    "x-scheme-handler/https" = "firefox.desktop";
+
     "text/plain"              = "helix.desktop";
     "text/x-nix"             = "helix.desktop";
     "text/markdown"          = "helix.desktop";
