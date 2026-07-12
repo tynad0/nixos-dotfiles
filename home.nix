@@ -16,8 +16,14 @@ in
   home.homeDirectory = "/home/tynado";
   home.stateVersion = "25.11";
 
-  nixpkgs.config.allowUnfree = true;
-
+  nixpkgs.config = {
+    allowUnfree = true;
+    permittedInsecurePackages = [
+      "electron-39.8.10"
+    ];
+    
+  };
+  
   # GTK
   gtk = {
     enable = true;
@@ -63,7 +69,7 @@ in
     xfce.thunar
     libnotify
     bitwarden-desktop
-    obsidian
+    # obsidian
     qutebrowser
 
     file
