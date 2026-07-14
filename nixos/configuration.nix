@@ -77,6 +77,18 @@
   # };
   programs.xwayland.enable = true;
 
+
+  # PORTAL
+  xdg.portal = {
+  enable = true;
+
+  extraPortals = with pkgs; [
+    xdg-desktop-portal-gtk
+    xdg-desktop-portal-wlr
+  ];
+};
+  
+  
   # Packages
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [

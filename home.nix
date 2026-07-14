@@ -77,7 +77,9 @@ in
     grim
     slurp
     wl-clipboard
+    obs-studio
     swayimg
+    networkmanagerapplet
     mpv
     xdg-utils
 
@@ -155,15 +157,15 @@ in
   };
 
   # PORTAL
-  xdg.portal = {
-    enable = true;
+  # xdg.portal = {
+  #   enable = true;
 
-    config.common.default = "*";
+  #   config.common.default = "*";
 
-    extraPortals = with pkgs; [
-      xdg-desktop-portal-gtk
-    ];
-  };
+  #   extraPortals = with pkgs; [
+  #     xdg-desktop-portal-gtk
+  #   ];
+  # };
 
   # Custom helix desktop entry
 home.file.".local/share/applications/helix.desktop".text = ''
