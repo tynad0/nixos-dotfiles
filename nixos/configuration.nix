@@ -1,4 +1,3 @@
-
 { config, pkgs, ... }:
 
 {
@@ -18,13 +17,13 @@
   nix.gc = {
     automatic = true;
     dates = "weekly";
-    options = "--delete-older-than 7d"; 
-  };  
+    options = "--delete-older-than 7d";
+  };
 
   # Networking
   networking.hostName = "nbnixos";
   networking.networkmanager.enable = true;
-  
+
   # Bluetooth
   hardware.bluetooth = {
     enable = true;
@@ -41,7 +40,7 @@
     alsa.support32Bit = true;
     pulse.enable = true;
   };
-  
+
   # Timezone
   time.timeZone = "Asia/Tashkent";
   i18n.defaultLocale = "en_US.UTF-8";
@@ -72,23 +71,26 @@
     enable = true;
     wrapperFeatures.gtk = true;
   };
-  # programs.niri = {
-  #   enable = true;
-  # };
-  programs.xwayland.enable = true;
 
+  # NIRI + DANK MATERIAL SHELL                 
+  programs.niri.enable = true;                 
+  programs.dms-shell = {                       
+    enable = true;                             
+    systemd.enable = true;                     
+  };                                           
+
+  programs.xwayland.enable = true;
 
   # PORTAL
   xdg.portal = {
-  enable = true;
+    enable = true;
 
-  extraPortals = with pkgs; [
-    xdg-desktop-portal-gtk
-    xdg-desktop-portal-wlr
-  ];
-};
-  
-  
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-gtk
+      xdg-desktop-portal-wlr
+    ];
+  };
+
   # Packages
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
@@ -113,8 +115,7 @@
   services.gvfs.enable = true;
   services.tumbler.enable = true;  # thumbnail previews in Thunar
   services.desktopManager.plasma6.enable = true;
-  
+
   system.stateVersion = "25.11";
   nix.settings.experimental-features = ["nix-command" "flakes"];
-
 }

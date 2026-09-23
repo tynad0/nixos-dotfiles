@@ -21,14 +21,13 @@ in
     permittedInsecurePackages = [
       "electron-39.8.10"
     ];
-    
   };
-  
+
   # GTK
   gtk = {
     enable = true;
 
-    gtk4.theme = null; # I am blocking
+    gtk4.theme = null;
     theme = {
       name = "Adwaita";
       package = pkgs.gnome-themes-extra;
@@ -76,9 +75,9 @@ in
 
     file
     file-roller
-  unzip
-  p7zip
-  unrar
+    unzip
+    p7zip
+    unrar
 
     wev
     grim
@@ -96,11 +95,11 @@ in
     kdePackages.ksshaskpass
 
     # YT automatic tool
-     (pkgs.writeShellScriptBin "yt-search" ''
+    (pkgs.writeShellScriptBin "yt-search" ''
       query=$(rofi -dmenu -p "YouTube: ")
       [ -n "$query" ] && xdg-open "https://www.youtube.com/results?search_query=''${query// /+}"
     '')
-    
+
     helix
   ];
 
@@ -135,9 +134,9 @@ in
         email = "thats.tynado@gmail.com";
       };
     };
-    
   };
 
+  # SSH
   programs.ssh = {
     enable = true;
     enableDefaultConfig = false;
@@ -148,19 +147,18 @@ in
   };
   services.ssh-agent.enable = true;
 
-    
   # BROWSER
   # programs.librewolf = {
   #   enable = true;
   # };
 
-  # SWAY CONFIG
+  # SWAY / NIRI CONFIG
   xdg.configFile = {
     "sway/config".source = ./modules/sway/config;
-    "niri/config.kdl".source = ./modules/niri/config.kdl;
+    # "niri/config.kdl".source = ./modules/niri/config.kdl;
   };
 
-  #PORTAL
+  # PORTAL
   xdg.portal = {
     enable = true;
 
@@ -172,42 +170,42 @@ in
   };
 
   # Custom helix desktop entry
-home.file.".local/share/applications/helix.desktop".text = ''
-  [Desktop Entry]
-  Name=Helix
-  Exec=foot hx %F
-  Type=Application
-  MimeType=text/plain;text/x-nix;text/markdown;text/x-script;text/x-shellscript;text/x-python;text/x-c;text/x-csrc;text/x-chdr;text/x-rust;text/x-toml;text/x-yaml;text/xml;text/css;text/javascript;application/json;application/x-shellscript;
-  Terminal=false
-  Categories=TextEditor;
-'';
+  home.file.".local/share/applications/helix.desktop".text = ''
+    [Desktop Entry]
+    Name=Helix
+    Exec=foot hx %F
+    Type=Application
+    MimeType=text/plain;text/x-nix;text/markdown;text/x-script;text/x-shellscript;text/x-python;text/x-c;text/x-csrc;text/x-chdr;text/x-rust;text/x-toml;text/x-yaml;text/xml;text/css;text/javascript;application/json;application/x-shellscript;
+    Terminal=false
+    Categories=TextEditor;
+  '';
 
-# MIME DEFAULTS
-xdg.mimeApps = {
-  enable = true;
-  defaultApplications = {
-    "text/html" = "firefox.desktop";
-    "x-scheme-handler/http" = "firefox.desktop";
-    "x-scheme-handler/https" = "firefox.desktop";
+  # MIME DEFAULTS
+  xdg.mimeApps = {
+    enable = true;
+    defaultApplications = {
+      "text/html" = "firefox.desktop";
+      "x-scheme-handler/http" = "firefox.desktop";
+      "x-scheme-handler/https" = "firefox.desktop";
 
-    "text/plain"              = "helix.desktop";
-    "text/x-nix"             = "helix.desktop";
-    "text/markdown"          = "helix.desktop";
-    "text/x-script"         = "helix.desktop";
-    "text/x-shellscript"    = "helix.desktop";
-    "text/x-python"         = "helix.desktop";
-    "text/x-rust"           = "helix.desktop";
-    "text/x-toml"           = "helix.desktop";
-    "text/x-yaml"           = "helix.desktop";
-    "text/xml"              = "helix.desktop";
-    "text/css"              = "helix.desktop";
-    "text/javascript"       = "helix.desktop";
-    "application/json"      = "helix.desktop";
-    "image/png"             = "imv.desktop";
-    "image/jpeg"            = "imv.desktop";
-    "video/mp4"             = "mpv.desktop";
+      "text/plain"         = "helix.desktop";
+      "text/x-nix"         = "helix.desktop";
+      "text/markdown"      = "helix.desktop";
+      "text/x-script"      = "helix.desktop";
+      "text/x-shellscript" = "helix.desktop";
+      "text/x-python"      = "helix.desktop";
+      "text/x-rust"        = "helix.desktop";
+      "text/x-toml"        = "helix.desktop";
+      "text/x-yaml"        = "helix.desktop";
+      "text/xml"           = "helix.desktop";
+      "text/css"           = "helix.desktop";
+      "text/javascript"    = "helix.desktop";
+      "application/json"   = "helix.desktop";
+      "image/png"          = "imv.desktop";
+      "image/jpeg"         = "imv.desktop";
+      "video/mp4"          = "mpv.desktop";
+    };
   };
-};
 
   home.sessionVariables = {
     SSH_ASKPASS = "${pkgs.kdePackages.ksshaskpass}/bin/ksshaskpass";
