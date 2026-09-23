@@ -30,12 +30,12 @@
         search-start = "Control+Shift+r";
         spawn-terminal = "Control+Shift+n";
       };
-      colors = {
+      colors-dark = {
         # ───── Base ─────
         background = "202020";
         foreground = "FEFEFE";
         regular0 = "202020";   # base background
-        bright0   = "303030";  # UI surface
+        bright0  = "303030";   # UI surface
         # ───── Text ─────
         regular7 = "CCCCCC";
         bright7  = "FEFEFE";
