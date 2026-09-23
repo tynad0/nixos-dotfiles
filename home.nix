@@ -10,6 +10,7 @@ in
     ./modules/waybar/sway-legacy/waybar.nix
     ./modules/rofi/rofi.nix
     ./modules/mako/mako.nix
+    ./modules/dms-uni-theme/dms-theme.nix
   ];
 
   home.username = "tynado";
