@@ -65,6 +65,7 @@ in
     telegram-desktop
     imv
     pavucontrol
+    pciutils
     dconf
     xfce.thunar
     libnotify
@@ -73,6 +74,11 @@ in
     qutebrowser
 
     file
+    file-roller
+  unzip
+  p7zip
+  unrar
+
     wev
     grim
     slurp
@@ -156,16 +162,16 @@ in
     "niri/config.kdl".source = ./modules/niri/config.kdl;
   };
 
-  # PORTAL
-  # xdg.portal = {
-  #   enable = true;
+  #PORTAL
+  xdg.portal = {
+    enable = true;
 
-  #   config.common.default = "*";
+    config.common.default = "*";
 
-  #   extraPortals = with pkgs; [
-  #     xdg-desktop-portal-gtk
-  #   ];
-  # };
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-gtk
+    ];
+  };
 
   # Custom helix desktop entry
 home.file.".local/share/applications/helix.desktop".text = ''
