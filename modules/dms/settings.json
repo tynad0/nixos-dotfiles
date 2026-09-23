@@ -217,7 +217,7 @@
     }
   },
   "launcherLogoMode": "os",
-  "launcherLogoCustomPath": "",
+  "launcherLogoCustomPath": "/home/tynado/Pictures/wha.jpg",
   "launcherLogoColorOverride": "",
   "launcherLogoColorInvertOnMode": false,
   "launcherLogoBrightness": 0.5,
