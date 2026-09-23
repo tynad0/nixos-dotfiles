@@ -155,7 +155,7 @@ in
   # SWAY / NIRI CONFIG
   xdg.configFile = {
     "sway/config".source = ./modules/sway/config;
-    # "niri/config.kdl".source = ./modules/niri/config.kdl;
+    "niri/config.kdl".source = ./modules/niri/config.kdl;
   };
 
   # PORTAL
