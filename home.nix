@@ -7,9 +7,9 @@ in
   imports = [
     ./modules/foot/foot.nix
     ./modules/helix/helix.nix
-    ./modules/waybar/sway-legacy/waybar.nix
+    #./modules/waybar/sway-legacy/waybar.nix
     ./modules/rofi/rofi.nix
-    ./modules/mako/mako.nix
+    #./modules/mako/mako.nix
     ./modules/dms-uni-theme/dms-theme.nix
   ];
 
