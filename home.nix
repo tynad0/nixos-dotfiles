@@ -11,6 +11,7 @@ in
     ./modules/rofi/rofi.nix
     #./modules/mako/mako.nix
     ./modules/dms-uni-theme/dms-theme.nix
+    ./modules/fixes/force.nix
   ];
 
   home.username = "tynado";
@@ -68,7 +69,6 @@ in
     pavucontrol
     pciutils
     dconf
-    thunar
     libnotify
     bitwarden-desktop
     # obsidian
@@ -80,6 +80,7 @@ in
     p7zip
     unrar
 
+    yazi
     wev
     grim
     slurp
@@ -111,7 +112,7 @@ in
 
     shellAliases = {
       hmc = "hx ${homeDir}/dotfiles/home.nix";
-      hms = "home-manager switch --flake .";
+      hms = "home-manager switch -b backup --flake .";
       sc = "hx ${homeDir}/dotfiles/nixos/configuration.nix";
       cdd = "cd ${homeDir}/dotfiles";
       cdov = ''cd "${homeDir}/Obsidian Vault"'';

@@ -113,8 +113,6 @@
   ];
 
   services.gvfs.enable = true;
-  services.tumbler.enable = true;  # thumbnail previews in Thunar
-  services.desktopManager.plasma6.enable = true;
 
   system.stateVersion = "25.11";
   nix.settings.experimental-features = ["nix-command" "flakes"];
