@@ -79,6 +79,7 @@ in
     p7zip
     unrar
 
+    swaybg
     yazi
     nemo
     wev

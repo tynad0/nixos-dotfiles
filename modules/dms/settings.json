@@ -418,6 +418,10 @@
         {
           "id": "workspaceSwitcher",
           "enabled": true
+        },
+        {
+          "id": "keyboard_layout_name",
+          "enabled": true
         }
       ],
       "centerWidgets": [
@@ -437,6 +441,10 @@
       ],
       "rightWidgets": [
         {
+          "id": "notificationButton",
+          "enabled": true
+        },
+        {
           "id": "clipboard",
           "enabled": true
         },
@@ -446,12 +454,7 @@
           "minimumWidth": true
         },
         {
-          "id": "memUsage",
-          "enabled": true,
-          "showSwap": false
-        },
-        {
-          "id": "notificationButton",
+          "id": "battery",
           "enabled": true
         },
         {

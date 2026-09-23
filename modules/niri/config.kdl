@@ -91,6 +91,7 @@ layout {
     // - "on-overflow", focusing a column will center it if it doesn't fit
     //   together with the previously focused column.
     center-focused-column "never"
+    always-center-single-column
 
     // You can customize the widths that "switch-preset-column-width" (Mod+R) toggles between.
     preset-column-widths {
@@ -187,6 +188,8 @@ layout {
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
 // spawn-at-startup "waybar"   // <-- DMS: панель теперь DMS, он запускается сам через systemd
+spawn-at-startup "swaybg" "-i" "/home/tynado/Downloads/web/wallhaven-o5ky29_1920x1200.png" "-m" "fill"
+
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
@@ -206,7 +209,7 @@ prefer-no-csd
 // You can change the path where screenshots are saved.
 // A ~ at the front will be expanded to the home directory.
 // The path is formatted with strftime(3) to give you the screenshot date and time.
-screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M.png"
+screenshot-path "~/Pictures/Screenshots/%d.png"
 
 // You can also set this to null to disable saving screenshots to disk.
 // screenshot-path null
@@ -214,12 +217,48 @@ screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M.png"
 // Animation settings.
 // The wiki explains how to configure individual animations:
 // https://yalter.github.io/niri/Configuration:-Animations
-animations {
-    // Uncomment to turn off all animations.
-    // off
 
-    // Slow down all animations by this factor. Values below 1 speed them up instead.
-    // slowdown 3.0
+animations {
+
+    workspace-switch {
+        spring damping-ratio=0.8 stiffness=1500 epsilon=0.0001
+    }
+
+    overview-open-close {
+        spring damping-ratio=0.8 stiffness=1500 epsilon=0.0001
+    }
+
+    recent-windows-close {
+        spring damping-ratio=0.8 stiffness=1500 epsilon=0.0001
+    }
+
+    window-open {
+        spring damping-ratio=0.8 stiffness=1500 epsilon=0.0001
+    }
+
+    window-close {
+        spring damping-ratio=0.8 stiffness=1500 epsilon=0.0001
+    }
+
+    horizontal-view-movement {
+        spring damping-ratio=0.8 stiffness=1500 epsilon=0.0001
+    }
+
+    window-movement {
+        spring damping-ratio=0.8 stiffness=1500 epsilon=0.0001
+    }
+
+    window-resize {
+        spring damping-ratio=0.8 stiffness=1500 epsilon=0.0001
+    }
+
+    config-notification-open-close {
+        spring damping-ratio=0.8 stiffness=1500 epsilon=0.0001
+    }
+
+    exit-confirmation-open-close {
+        spring damping-ratio=0.8 stiffness=1500 epsilon=0.0001
+    }
 }
 
 // Window rules let you adjust behavior for individual windows.
@@ -290,7 +329,7 @@ binds {
     // Use spawn-sh to run a shell command. Do this if you need pipes, multiple commands, etc.
     // Note: the entire command goes as a single argument. It's passed verbatim to `sh -c`.
     // For example, this is a standard bind to toggle the screen reader (orca).
-    Super+Alt+S allow-when-locked=true hotkey-overlay-title=null { spawn-sh "pkill orca || exec orca"; }
+    // Super+Alt+S allow-when-locked=true hotkey-overlay-title=null { spawn-sh "pkill orca || exec orca"; }
 
     // Example volume keys mappings for PipeWire & WirePlumber.
     // The allow-when-locked=true property makes them work even when the session is locked.
@@ -543,4 +582,13 @@ binds {
     // Powers off the monitors. To turn them back on, do any input like
     // moving the mouse or pressing any other key.
     Mod+Shift+P { power-off-monitors; }
+}
+
+ overview {
+        backdrop-color "#1e1e2e";
+}
+
+layer-rule {
+    match namespace="^wallpaper$"
+    place-within-backdrop true
 }
