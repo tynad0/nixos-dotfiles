@@ -28,6 +28,7 @@ in
   gtk = {
     enable = true;
 
+    gtk4.theme = null; # I am blocking
     theme = {
       name = "Adwaita";
       package = pkgs.gnome-themes-extra;
@@ -67,7 +68,7 @@ in
     pavucontrol
     pciutils
     dconf
-    xfce.thunar
+    thunar
     libnotify
     bitwarden-desktop
     # obsidian
@@ -137,17 +138,14 @@ in
     
   };
 
-  # SSH
   programs.ssh = {
     enable = true;
-
     enableDefaultConfig = false;
 
-    matchBlocks."*" = {
-      addKeysToAgent = "yes";
+    settings."*" = {
+      AddKeysToAgent = "yes";
     };
   };
-
   services.ssh-agent.enable = true;
 
     
