@@ -10,8 +10,7 @@ in
     #./modules/waybar/sway-legacy/waybar.nix
     ./modules/rofi/rofi.nix
     #./modules/mako/mako.nix
-    ./modules/dms-uni-theme/dms-theme.nix
-    ./modules/fixes/force.nix
+    ./modules/yazi/yazi.nix
   ];
 
   home.username = "tynado";
@@ -81,6 +80,7 @@ in
     unrar
 
     yazi
+    nemo
     wev
     grim
     slurp
@@ -155,11 +155,14 @@ in
   # };
 
   # SWAY / NIRI CONFIG
-  xdg.configFile = {
-    "sway/config".source = ./modules/sway/config;
-    "niri/config.kdl".source = ./modules/niri/config.kdl;
+xdg.configFile = {
+    "sway/config".source =
+      config.lib.file.mkOutOfStoreSymlink "${homeDir}/dotfiles/modules/sway/config";
+    "niri".source =
+      config.lib.file.mkOutOfStoreSymlink "${homeDir}/dotfiles/modules/niri";
+    "DankMaterialShell".source =
+      config.lib.file.mkOutOfStoreSymlink "${homeDir}/dotfiles/modules/dms";
   };
-
   # PORTAL
   xdg.portal = {
     enable = true;
@@ -189,6 +192,7 @@ in
       "text/html" = "firefox.desktop";
       "x-scheme-handler/http" = "firefox.desktop";
       "x-scheme-handler/https" = "firefox.desktop";
+      "inode/directory" = "nemo.desktop";
 
       "text/plain"         = "helix.desktop";
       "text/x-nix"         = "helix.desktop";
