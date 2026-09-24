@@ -427,25 +427,25 @@
       "centerWidgets": [
         {
           "id": "music",
-          "enabled": true,
-          "mediaSize": 1
-        },
-        {
-          "id": "clock",
           "enabled": true
         },
         {
-          "id": "weather",
+          "id": "spacer",
+          "enabled": true,
+          "size": 10
+        },
+        {
+          "id": "clock",
           "enabled": true
         }
       ],
       "rightWidgets": [
         {
-          "id": "notificationButton",
+          "id": "clipboard",
           "enabled": true
         },
         {
-          "id": "clipboard",
+          "id": "notificationButton",
           "enabled": true
         },
         {
@@ -476,9 +476,9 @@
       "gothCornersEnabled": false,
       "gothCornerRadiusOverride": false,
       "gothCornerRadiusValue": 12,
-      "borderEnabled": false,
+      "borderEnabled": true,
       "borderColor": "primary",
-      "borderOpacity": 1,
+      "borderOpacity": 0.5,
       "borderThickness": 1,
       "widgetOutlineEnabled": false,
       "widgetOutlineColor": "primary",
