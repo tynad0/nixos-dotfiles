@@ -99,6 +99,7 @@
     firefox
     git
     bat
+    jq
   ];
 
   fonts.packages = with pkgs; [

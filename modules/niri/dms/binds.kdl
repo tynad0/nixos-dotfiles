@@ -90,6 +90,7 @@ binds {
     Super+Shift+S { screenshot; }
     XF86Launch1 { screenshot; }
     Mod+Shift+E { quit; }
+    Super+E allow-when-locked=true { spawn "sh" "-c" "rofi -dmenu -p Search | jq -Rr '([61]|implode) as $eq | split(\" \") as $w | {\"g\": (\"https://www.google.com/search?q\" + $eq), \"yt\": (\"https://www.youtube.com/results?search_query\" + $eq), \"red\": (\"https://www.reddit.com/search/?q\" + $eq), \"s\": \"spotify:search:\"}[$w[0]] as $u | if $u then $u + ($w[1:] | join(\" \") | @uri) else \"https://www.google.com/search?q\" + $eq + @uri end' | xargs -r xdg-open"; }
     Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
     Mod+Shift+Slash { show-hotkey-overlay; }
     Mod+Tab repeat=false { toggle-overview; }

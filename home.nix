@@ -69,6 +69,7 @@ in
     pciutils
     dconf
     libnotify
+    spotify
     bitwarden-desktop
     # obsidian
     qutebrowser
