@@ -75,6 +75,7 @@ in
     qutebrowser
 
     file
+    fastfetch
     file-roller
     unzip
     p7zip
