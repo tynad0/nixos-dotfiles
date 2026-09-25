@@ -100,7 +100,13 @@
     git
     bat
     jq
+    xwayland-satellite
   ];
+
+  #GAME
+  programs.steam = {
+    enable = true;
+  };
 
   fonts.packages = with pkgs; [
     noto-fonts
