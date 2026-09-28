@@ -81,16 +81,27 @@
 
   programs.xwayland.enable = true;
 
-  # PORTAL
+    # PORTAL
   xdg.portal = {
     enable = true;
 
     extraPortals = with pkgs; [
       xdg-desktop-portal-gtk
-      xdg-desktop-portal-wlr
+      xdg-desktop-portal-gnome
     ];
+
+    # выбор экрана в sway через slurp
+    wlr.settings.screencast = {
+      chooser_type = "simple";
+      chooser_cmd = "${pkgs.slurp}/bin/slurp -f %o -or";
+    };
   };
 
+  services.gnome.gnome-keyring.enable = true;
+
+  # Electron-приложения нативно под Wayland
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
+    
   # Packages
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [

@@ -166,16 +166,6 @@ xdg.configFile = {
     "DankMaterialShell".source =
       config.lib.file.mkOutOfStoreSymlink "${homeDir}/dotfiles/modules/dms";
   };
-  # PORTAL
-  xdg.portal = {
-    enable = true;
-
-    config.common.default = "*";
-
-    extraPortals = with pkgs; [
-      xdg-desktop-portal-gtk
-    ];
-  };
 
   # Custom helix desktop entry
   home.file.".local/share/applications/helix.desktop".text = ''
