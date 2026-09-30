@@ -108,14 +108,14 @@ in
     helix
   ];
 
-  # SHELL
+   # SHELL
   programs.bash = {
     enable = true;
     enableCompletion = true;
 
     shellAliases = {
       hmc = "hx ${homeDir}/dotfiles/home.nix";
-      hms = "home-manager switch -b backup --flake .";
+      hms = "home-manager switch --flake .";
       sc = "hx ${homeDir}/dotfiles/nixos/configuration.nix";
       cdd = "cd ${homeDir}/dotfiles";
       cdov = ''cd "${homeDir}/Obsidian Vault"'';
@@ -128,7 +128,8 @@ in
       PS1='\w$(git_branch | sed "s/\(.*\)/ (\1)/")\nλ '
     '';
   };
-
+  
+  
   # GIT
   programs.git = {
     enable = true;
