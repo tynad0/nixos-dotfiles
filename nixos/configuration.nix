@@ -51,13 +51,25 @@
   };
 
   # User Options
-  users.users.tynado = {
-    isNormalUser = true;
-    description = "tynado";
-    extraGroups = [ "networkmanager" "wheel" "audio" "video" "plugdev" "disk" "input" "usb"];
-    packages = with pkgs; [];
+ users = {
+  users = {
+    tynado = {
+      isNormalUser = true;
+      description = "tynado";
+      extraGroups = [ 
+        "networkmanager" 
+        "wheel" 
+        "audio" 
+        "video" 
+        "plugdev" 
+        "disk" 
+        "input" 
+        "usb" 
+      ];
+      packages = with pkgs; [];
+    };
   };
-
+};
   # WM, DM, DE stuff
   services.displayManager.ly = {
     enable = true;
