@@ -57,14 +57,7 @@
       isNormalUser = true;
       description = "tynado";
       extraGroups = [ 
-        "networkmanager" 
-        "wheel" 
-        "audio" 
-        "video" 
-        "plugdev" 
-        "disk" 
-        "input" 
-        "usb" 
+        "networkmanager" "wheel" "audio" "video" "plugdev" "disk" "input" "usb" 
       ];
       packages = with pkgs; [];
     };
