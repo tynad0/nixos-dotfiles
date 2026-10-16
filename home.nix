@@ -99,6 +99,8 @@ in
     qutebrowser
     spotify
     telegram-desktop
+    onlyoffice-desktopeditors
+    zathura
 
     helix
 
