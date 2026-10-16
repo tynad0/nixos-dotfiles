@@ -60,52 +60,53 @@ in
     };
   };
 
-  # PACKAGES
+# PACKAGES
   home.packages = with pkgs; [
-    tree
-    telegram-desktop
-    imv
-    pavucontrol
-    pciutils
+    
     dconf
-    libnotify
-    spotify
-    bitwarden-desktop
-    # obsidian
-    qutebrowser
-
-    file
-    fastfetch
-    file-roller
-    unzip
-    p7zip
-    unrar
-
-    swaybg
-    yazi
-    nemo
-    wev
-    grim
-    slurp
-    wl-clipboard
-    obs-studio
-    swayimg
-    networkmanagerapplet
-    mpv
-    xdg-utils
-
-    glib
-    shared-mime-info
     desktop-file-utils
+    fastfetch
+    file
+    file-roller
+    glib
+    p7zip
+    pciutils
+    shared-mime-info
+    tree
+    unrar
+    unzip
+
+    nmap
+    remmina
+
+    grim
+    imv
+    libnotify
+    mpv
+    nemo
+    networkmanagerapplet
+    slurp
+    swaybg
+    swayimg
+    wev
+    wl-clipboard
+    xdg-utils
+    yazi
+
+    bitwarden-desktop
     kdePackages.ksshaskpass
+    obs-studio
+    qutebrowser
+    spotify
+    telegram-desktop
+
+    helix
 
     # YT automatic tool
     (pkgs.writeShellScriptBin "yt-search" ''
       query=$(rofi -dmenu -p "YouTube: ")
       [ -n "$query" ] && xdg-open "https://www.youtube.com/results?search_query=''${query// /+}"
     '')
-
-    helix
   ];
 
    # SHELL
