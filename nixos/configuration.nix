@@ -137,7 +137,10 @@
 
   services.gvfs.enable = true;
   services.upower.enable = true;
-
+  services.tailscale = {
+    enable = true;
+  };
+            
   system.stateVersion = "25.11";
   nix.settings.experimental-features = ["nix-command" "flakes"];
 }
