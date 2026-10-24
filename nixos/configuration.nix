@@ -114,6 +114,7 @@
     wget
     firefox
     git
+    ansible
     bat
     jq
     xwayland-satellite
