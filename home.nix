@@ -142,7 +142,7 @@ in
     settings = {
       user = {
         name = "Tynado";
-        email = "thats.tynado@gmail.com";
+        email = "179323674+tynad0@users.noreply.github.com";
       };
     };
   };
