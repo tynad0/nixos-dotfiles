@@ -76,6 +76,7 @@ in
     tree
     unrar
     unzip
+    nixfmt
 
     nmap
     remmina
