@@ -11,6 +11,7 @@ in
     ./modules/rofi/rofi.nix
     #./modules/mako/mako.nix
     ./modules/yazi/yazi.nix
+    ./modules/ssh/ssh.nix
   ];
 
   home.username = "tynado";
@@ -144,17 +145,6 @@ in
       };
     };
   };
-
-  # SSH
-  programs.ssh = {
-    enable = true;
-    enableDefaultConfig = false;
-
-    settings."*" = {
-      AddKeysToAgent = "yes";
-    };
-  };
-  services.ssh-agent.enable = true;
 
   # BROWSER
   # programs.librewolf = {
