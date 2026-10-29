@@ -11,7 +11,6 @@ in
     ./modules/rofi/rofi.nix
     #./modules/mako/mako.nix
     ./modules/yazi/yazi.nix
-    ./modules/ssh/ssh.nix
   ];
 
   home.username = "tynado";
