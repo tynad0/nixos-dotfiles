@@ -11,18 +11,12 @@
       };
 
       myvm = {
-        HostName = "100.65.202.86";
-        User = "s1user";
-        Port = 2232;
+        HostName = "192.168.0.121";
+        User = "ls1u";
+        Port = 22;
         IdentityFile = "~/.ssh/id_ed25519";
       };
 
-      myvm2 = {
-        HostName = "100.68.88.50";
-        User = "s2user";
-        Port = 2232;
-        IdentityFile = "~/.ssh/id_ed25519";
-      };
     };
   };
 
