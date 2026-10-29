@@ -1,3 +1,4 @@
 .home.nix.swo
 flake.nix.save
 modules/ansible/
+modules/ssh/
