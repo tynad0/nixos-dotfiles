@@ -105,7 +105,7 @@ in
 
     helix
 
-    # YT automatic tool
+    # YT automatic search tool
     (pkgs.writeShellScriptBin "yt-search" ''
       query=$(rofi -dmenu -p "YouTube: ")
       [ -n "$query" ] && xdg-open "https://www.youtube.com/results?search_query=''${query// /+}"
